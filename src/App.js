@@ -17,9 +17,8 @@ const Template = (props) => (
       {props.title}:
     </p>
     <ul className={props.status}>
-        <li onClick={()=> saveToken('sRKWQu6hCJgR25lslcf5s12FFVau0ugi')} id="task_1">Task 1</li>
-        <li onClick={displayCachedToken} id="task_2">Task 2</li>
-        <li>Task 3</li>
+        <li onClick={()=> saveToken(FAKE_TOKEN)} id="task_1">Save token</li>
+        <li onClick={displayCachedToken} id="task_2">Get Token</li>
     </ul>
   </div>
 );
@@ -35,7 +34,7 @@ const FAKE_TOKEN = "sRKWQu6hCJgR25lslcf5s12FFVau0ugi";
 const FAKE_ENDPOINT = "/fake-endpoint";
 
 const saveToken = async (token) => {
-  console.log(token);
+  console.log(FAKE_ENDPOINT);
   try {
     const cache = await caches.open(CACHE_NAME);
     const responseBody = JSON.stringify({
